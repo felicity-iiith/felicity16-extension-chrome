@@ -2,7 +2,6 @@
 
 function getEvents()
 {
-    localStorage['version_id'] = '';
     // console.log("getEvents called");
     events_data = null;
     $.getJSON("https://felicity.iiit.ac.in/api/schedule/", {
@@ -10,12 +9,11 @@ function getEvents()
         },
         function(result){
             // console.log(result);
-            test = result;
             if(!(result == undefined || result == ''))
             {
                 version_id = result.version_id;
                 schedule = result.page_data;
-                // console.log(version_id, schedule);
+                console.log(version_id, schedule);
 
                 if(version_id)
                 {
