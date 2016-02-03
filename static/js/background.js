@@ -13,7 +13,7 @@ function getEvents()
             {
                 version_id = result.version_id;
                 schedule = result.page_data;
-                console.log(version_id, schedule);
+                // console.log(version_id, schedule);
 
                 if(version_id)
                 {
@@ -32,7 +32,7 @@ function getEvents()
                     }
                     // notifs_info.forEach(function(notif){console.log(notif)});
                     localStorage['notifs_info'] = JSON.stringify(notifs_info);
-                    // notifs_info[0].start_time = "2016-02-05 00:19";
+                    // notifs_info[0].start_time = "2016-02-04 02:10";
                     createNotifAlarms(notifs_info);
                     // showNotification(notifs_info[0].name, "15 minutes");
                 }
@@ -42,6 +42,7 @@ function getEvents()
 
 function createNotifAlarms(notifs_info)
 {
+    chrome.alarms.clearAll();
     notifs_info.forEach(function(notif){
         timeWhen_1 = new Date(notif.start_time).getTime()-86400000;
         timeWhen_2 = new Date(notif.start_time).getTime()-900000;
