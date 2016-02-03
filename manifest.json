@@ -17,6 +17,7 @@
    },
   "permissions": [
     "notifications",
-    "https://felicity.iiit.ac.in/"
+    "https://felicity.iiit.ac.in/",
+    "alarms"
   ]
 }
